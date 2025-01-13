@@ -13,11 +13,13 @@ class ContentViewModel{
     
     private let apiService = ApiService()
     var navigateDetail: DeviceData? = nil
-    var data: [DeviceData]? = []
-
+    var allDevices: [DeviceData]? = []
+    var data : [DeviceData]? = []
     func fetchAPI() async {
         do{
            data = try await apiService.fetchDeviceDetails()
+            allDevices = data
+            
         }catch
         {
             print("Error")

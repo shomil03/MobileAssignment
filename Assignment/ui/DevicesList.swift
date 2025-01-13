@@ -15,7 +15,9 @@ struct DevicesList: View {
         List(devices) { device in
             Button {
                 onSelect(device)
-            } label: {
+            }
+            
+            label: {
                 VStack(alignment: .leading) {
                     AssignmentText(text: device.name)
                 }

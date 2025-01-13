@@ -10,9 +10,19 @@ import SwiftUI
 struct ContentView: View {
     private var viewModel = ContentViewModel()
     @State private var path: [DeviceData] = [] // Navigation path
+    @State var searchText: String = ""
 
     var body: some View {
         NavigationStack(path: $path) {
+            HStack{
+                TextField("seach", text: $searchText)
+                Button(action: {
+                    viewModel.data =  searchImplementation(string: searchText, data: viewModel.allDevices ?? [])
+                }, label: {
+                    Image(systemName: "magnifyingglass")
+
+                })
+            }
             Group {
                 if let computers = viewModel.data, !computers.isEmpty {
                     DevicesList(devices: computers) { selectedComputer in
@@ -30,14 +40,16 @@ struct ContentView: View {
             .navigationDestination(for: DeviceData.self) { computer in
                 DetailView(device: computer)
             }
-//            .onAppear {
-//                let navigate = viewModel.navigateDetail
-//                if (navigate != nil) {
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                        path.append(navigate!)
-//                    }
-//                }
-//            }
+            .onAppear {
+                let navigate = viewModel.navigateDetail
+                if (navigate != nil) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        path.append(navigate!)
+                    }
+                }
+            }
+            
+
         }
         .task {
             await viewModel.fetchAPI()
