@@ -15,17 +15,18 @@ class ApiService : NSObject {
     private let baseUrl = ""
     
     private let sourcesURL = URL(string: "https://api.restful-api.dev/objects")!
-    
-    func fetchDeviceDetails(url : URL) async throws -> [DeviceData] {
-        let (data , response) = try await URLSession.shared.data(from: url)
+//    let url = baseUrl + sourcesURL
+    func fetchDeviceDetails() async throws -> [DeviceData] {
+        
+        let (data , response) = try await URLSession.shared.data(from: sourcesURL)
         
         guard let response = response as? HTTPURLResponse else {
             throw NetworldError.invalidResponse
         }
         
-        if response.isNotEqual(to: 200) {
-            throw NetworldError.invalidResponse
-        }
+//        if response.isNotEqual(to: 200) {
+//            throw NetworldError.invalidResponse
+//        }
         
         let DeviceDetails = try JSONDecoder().decode([DeviceData].self, from: data)
         

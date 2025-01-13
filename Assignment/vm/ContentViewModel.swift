@@ -6,15 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
 
-
-class ContentViewModel : ObservableObject {
+@Observable
+class ContentViewModel{
     
     private let apiService = ApiService()
-    @Published var navigateDetail: DeviceData? = nil
-    @Published var data: [DeviceData]? = []
+    var navigateDetail: DeviceData? = nil
+    var data: [DeviceData]? = []
 
-    func fetchAPI() {
+    func fetchAPI() async {
+        do{
+           data = try await apiService.fetchDeviceDetails()
+        }catch
+        {
+            print("Error")
+        }
 //        apiService.fetchDeviceDetails(completion: { item in
 //            self.data = item
 //        })
