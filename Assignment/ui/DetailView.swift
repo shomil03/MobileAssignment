@@ -9,7 +9,8 @@ import SwiftUI
 
 struct DetailView: View {
     let device: DeviceData
-
+    var viewModel : ContentViewModel
+    @Binding var path : [DeviceData]
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text(device.name)
@@ -35,6 +36,11 @@ struct DetailView: View {
             }
 
             Spacer()
+        }
+        .onDisappear {
+//            path.removeLast()
+            viewModel.navigateDetail = nil
+            path.removeAll()
         }
         .padding()
         .navigationTitle("Details")

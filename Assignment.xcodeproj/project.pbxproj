@@ -18,6 +18,7 @@
 		0C7ED35D2D31014F003DCAA1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7ED35C2D31014F003DCAA1 /* DetailView.swift */; };
 		0C7ED3612D314E15003DCAA1 /* AssignmentText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7ED3602D314E15003DCAA1 /* AssignmentText.swift */; };
 		4FF410432D34E79900B44FB6 /* SeachImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF410422D34E79900B44FB6 /* SeachImplementation.swift */; };
+		4FF410452D34EACB00B44FB6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF410442D34EACB00B44FB6 /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0C7ED35C2D31014F003DCAA1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0C7ED3602D314E15003DCAA1 /* AssignmentText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentText.swift; sourceTree = "<group>"; };
 		4FF410422D34E79900B44FB6 /* SeachImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachImplementation.swift; sourceTree = "<group>"; };
+		4FF410442D34EACB00B44FB6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				0C7ED3582D310121003DCAA1 /* DevicesList.swift */,
 				0C7ED35C2D31014F003DCAA1 /* DetailView.swift */,
 				0C7ED3602D314E15003DCAA1 /* AssignmentText.swift */,
+				4FF410442D34EACB00B44FB6 /* SearchBarView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF410452D34EACB00B44FB6 /* SearchBarView.swift in Sources */,
 				0C7046852D27F8900008440F /* ContentView.swift in Sources */,
 				0C7046832D27F8900008440F /* AssignmentApp.swift in Sources */,
 				0C7ED3592D310121003DCAA1 /* DevicesList.swift in Sources */,

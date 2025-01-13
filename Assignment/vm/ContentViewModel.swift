@@ -32,4 +32,8 @@ class ContentViewModel{
     func navigateToDetail(navigateDetail: DeviceData) {
         self.navigateDetail = navigateDetail
     }
+    
+    func navigateBack(){
+//        navigateDetail =
+    }
 }
